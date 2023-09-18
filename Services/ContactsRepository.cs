@@ -5,13 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace MyContactProject
 {
 	internal class ContactsRepository : IContactRepository
 	{
-
-		private string connectionString = "Data Source=.,Initial Catalog=MyContacts_DB,User Id=Sana1382,Password=Sana1382";
+		//
+		private string connectionString = "Data Source=.;Initial Catalog=MyContacts_DB;Integrated Security = true";
 		public bool Delete(int Id)
 		{
 			throw new NotImplementedException();
@@ -24,6 +25,12 @@ namespace MyContactProject
 			SqlDataAdapter adapter=new SqlDataAdapter(query,connection);
 			DataTable dt = new DataTable();
 			adapter.Fill(dt);
+			try
+			{
+				
+			}
+			catch (Exception e) {}
+			
 			return dt;
 		}
 
