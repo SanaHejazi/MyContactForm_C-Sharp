@@ -44,6 +44,7 @@
 			this.myContactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.my_ContactsTableAdapter = new MyContactProject.MyContacts_DBDataSet1TableAdapters.My_ContactsTableAdapter();
 			this.btnrefresh = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgContact)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.myContacts_DBDataSet)).BeginInit();
@@ -84,6 +85,7 @@
 			this.dgContact.RowTemplate.Height = 28;
 			this.dgContact.Size = new System.Drawing.Size(960, 437);
 			this.dgContact.TabIndex = 0;
+			this.dgContact.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgContact_CellContentClick);
 			// 
 			// ID
 			// 
@@ -177,18 +179,30 @@
 			this.btnrefresh.UseVisualStyleBackColor = true;
 			this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(747, 12);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(91, 41);
+			this.button1.TabIndex = 3;
+			this.button1.Text = "ثبت نام";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.HotTrack;
-			this.ClientSize = new System.Drawing.Size(978, 579);
+			this.ClientSize = new System.Drawing.Size(978, 583);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.btnrefresh);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.groupBox2);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "Form1";
 			this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "دفترچه تلفن من";
 			this.Load += new System.EventHandler(this.Form1_Load_1);
 			this.groupBox2.ResumeLayout(false);
@@ -217,6 +231,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Age;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Number;
 		private System.Windows.Forms.Button btnrefresh;
+		private System.Windows.Forms.Button button1;
 	}
 }
 

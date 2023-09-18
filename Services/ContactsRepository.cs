@@ -20,7 +20,7 @@ namespace MyContactProject
 
 		public DataTable GetContactTable()
 		{
-			String query = "Select * From My_Contacts";
+			String query = "Select Name,Family,Age,Email,Number,ID From My_Contacts";
 			SqlConnection connection = new SqlConnection(connectionString);
 			SqlDataAdapter adapter=new SqlDataAdapter(query,connection);
 			DataTable dt = new DataTable();

@@ -34,5 +34,16 @@ namespace MyContactProject
 		{
 			refrehs();
 		}
+
+		private void dgContact_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			AddOrEdit addOrEdit = new AddOrEdit();
+			addOrEdit.ShowDialog();
+		}
 	}
 }
