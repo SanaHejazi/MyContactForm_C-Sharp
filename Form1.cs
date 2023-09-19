@@ -44,6 +44,10 @@ namespace MyContactProject
 		{
 			AddOrEdit addOrEdit = new AddOrEdit();
 			addOrEdit.ShowDialog();
+			if(addOrEdit.DialogResult==DialogResult.OK)
+			{
+				refrehs();
+			}
 		}
 	}
 }

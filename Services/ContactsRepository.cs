@@ -11,7 +11,7 @@ namespace MyContactProject
 {
 	internal class ContactsRepository : IContactRepository
 	{
-		//
+		
 		private string connectionString = "Data Source=.;Initial Catalog=MyContacts_DB;Integrated Security = true";
 		public bool Delete(int Id)
 		{
@@ -39,9 +39,18 @@ namespace MyContactProject
 			throw new NotImplementedException();
 		}
 
-		public bool Insert(string Name, string Family, int Age, string Number)
+		public bool Insert(string Name, string Family, int Age, string Number,string adress)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				string inserquery= "Insert Into My_Contacts(Name,Family,Age,Email,Number,Address) Values ('')"
+				return true;
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show(e.Message);
+				return false;
+			}
 		}
 
 		public bool Update(int Id, string Name, string Family, int Age, string Number)
