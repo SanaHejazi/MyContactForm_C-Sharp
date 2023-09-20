@@ -21,7 +21,7 @@ namespace MyContactProject
 
 		private void AddOrEdit_Load(object sender, EventArgs e)
 		{
-			
+			this.Text = "افزودن شخص جدید";
 		}
 		bool isvalid()
 		{
@@ -64,7 +64,7 @@ namespace MyContactProject
 		{
 			if(isvalid())
 			{
-				bool success= contactRepository.Insert(txtName.Text, txtFamily.Text,(int)NumberAge.Value, txtNumber.Text,txtAdress.Text);
+				bool success= contactRepository.Insert(txtName.Text, txtFamily.Text, txtEmail.Text,(int)NumberAge.Value , txtNumber.Text,txtAdress.Text);
 				if(success)
 				{
 					MessageBox.Show("مخاطب موردنظر ثبت شد","پیغام سیستم",MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -78,6 +78,11 @@ namespace MyContactProject
 		}
 
 		private void NumberAge_ValueChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void txtAdress_TextChanged(object sender, EventArgs e)
 		{
 
 		}

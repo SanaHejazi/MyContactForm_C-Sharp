@@ -89,11 +89,12 @@
 			this.txtAdress.Name = "txtAdress";
 			this.txtAdress.Size = new System.Drawing.Size(838, 199);
 			this.txtAdress.TabIndex = 12;
+			this.txtAdress.TextChanged += new System.EventHandler(this.txtAdress_TextChanged);
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(870, 291);
+			this.label6.Location = new System.Drawing.Point(864, 291);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(98, 34);
 			this.label6.TabIndex = 11;
