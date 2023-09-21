@@ -49,5 +49,34 @@ namespace MyContactProject
 				refrehs();
 			}
 		}
+
+		private void btndelete_Click(object sender, EventArgs e)
+		{
+			if(dgContact.CurrentRow!= null)
+			{
+				string name = dgContact.CurrentRow.Cells[1].Value.ToString();
+				string family = dgContact.CurrentRow.Cells[2].Value.ToString();
+				string fullname=name+" "+family;
+				if (MessageBox.Show($" ایا از حذف {fullname} مطمان هستید؟", "توجه", MessageBoxButtons.YesNo) == DialogResult.Yes)
+				{
+					int contactid = (int)dgContact.CurrentRow.Cells[0].Value;
+					if(contactRepository.Delete(contactid))
+					{
+						MessageBox.Show("حذف با موفقیت انجام شد", "پیغام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					}
+					else
+					{
+						MessageBox.Show("حذف مخاطب ناموفق بود", "پیغام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					}
+
+
+					refrehs();
+				}
+			}
+			else
+			{
+				MessageBox.Show("لطفا مخاطب خود را انتخاب کنید","پیغام سیستم",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+			}
+		}
 	}
 }

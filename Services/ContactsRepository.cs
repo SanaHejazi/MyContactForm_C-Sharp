@@ -15,7 +15,28 @@ namespace MyContactProject
 		private string connectionString = "Data Source=.;Initial Catalog=MyContacts_DB;Integrated Security = true";
 		public bool Delete(int Id)
 		{
-			throw new NotImplementedException();
+			SqlConnection connection = new SqlConnection(connectionString);
+			try
+			{
+				
+				string query = "Delete From My_Contacts Where ID=@Id";
+				SqlCommand command=new SqlCommand(query, connection);
+				command.Parameters.AddWithValue("@id", Id);
+				connection.Open();
+				command.ExecuteNonQuery();
+				return true;
+			}
+			catch (Exception e)
+			{
+				
+				MessageBox.Show(e.Message);
+			return false;
+			}
+			finally 
+			{
+				connection.Close();
+			}
+
 		}
 
 		public DataTable GetContactTable()

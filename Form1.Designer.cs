@@ -45,6 +45,8 @@
 			this.my_ContactsTableAdapter = new MyContactProject.MyContacts_DBDataSet1TableAdapters.My_ContactsTableAdapter();
 			this.btnrefresh = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
+			this.btndelete = new System.Windows.Forms.Button();
+			this.btnedit = new System.Windows.Forms.Button();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgContact)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.myContacts_DBDataSet)).BeginInit();
@@ -189,12 +191,33 @@
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
+			// btndelete
+			// 
+			this.btndelete.Location = new System.Drawing.Point(632, 12);
+			this.btndelete.Name = "btndelete";
+			this.btndelete.Size = new System.Drawing.Size(95, 41);
+			this.btndelete.TabIndex = 4;
+			this.btndelete.Text = "حذف";
+			this.btndelete.UseVisualStyleBackColor = true;
+			this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+			// 
+			// btnedit
+			// 
+			this.btnedit.Location = new System.Drawing.Point(508, 12);
+			this.btnedit.Name = "btnedit";
+			this.btnedit.Size = new System.Drawing.Size(99, 41);
+			this.btnedit.TabIndex = 5;
+			this.btnedit.Text = "ویرایش";
+			this.btnedit.UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.HotTrack;
 			this.ClientSize = new System.Drawing.Size(978, 583);
+			this.Controls.Add(this.btnedit);
+			this.Controls.Add(this.btndelete);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.btnrefresh);
 			this.Controls.Add(this.groupBox1);
@@ -232,6 +255,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Number;
 		private System.Windows.Forms.Button btnrefresh;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btndelete;
+		private System.Windows.Forms.Button btnedit;
 	}
 }
 
