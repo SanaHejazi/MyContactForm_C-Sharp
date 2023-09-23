@@ -216,7 +216,7 @@
 			// 
 			// txtsearch
 			// 
-			this.txtsearch.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.txtsearch.BackColor = System.Drawing.SystemColors.InactiveCaption;
 			this.txtsearch.Location = new System.Drawing.Point(-4, 11);
 			this.txtsearch.Name = "txtsearch";
 			this.txtsearch.Size = new System.Drawing.Size(749, 36);
@@ -227,7 +227,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.BackColor = System.Drawing.SystemColors.Highlight;
 			this.ClientSize = new System.Drawing.Size(978, 583);
 			this.Controls.Add(this.btnedit);
 			this.Controls.Add(this.btndelete);
