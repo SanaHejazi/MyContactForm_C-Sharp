@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyContactProject
-{ 
+{
+
 	public partial class AddOrEdit : Form
 	{
+		public int x;
 		IContactRepository contactRepository;
 		public AddOrEdit()
 		{
@@ -21,14 +23,31 @@ namespace MyContactProject
 
 		private void AddOrEdit_Load(object sender, EventArgs e)
 		{
-			this.Text = "افزودن شخص جدید";
+			if (x == 0)
+			{
+				this.Text = "افزودن شخص جدید";
+			}
+			
+			else
+			{
+				this.Text = "ویرایش شخص ";
+			DataTable dt=	contactRepository.GetRowContact(x);
+
+			txtName.Text = dt.Rows[0][0].ToString();
+				txtFamily.Text = dt.Rows[0][1].ToString();
+				txtEmail.Text = dt.Rows[0][3].ToString();
+				NumberAge.Value =(int) dt.Rows[0][2];
+				txtNumber.Text = dt.Rows[0][4].ToString();
+				txtAdress.Text = dt.Rows[0][6].ToString();
+				button1.Text = "ثبت ویرایش";
+			}
 		}
 		bool isvalid()
 		{
-			
+
 			if (txtName.Text == "")
 			{
-				MessageBox.Show("لطفا نام را وارد کنید","هشدار",MessageBoxButtons.OK,MessageBoxIcon.Error);
+				MessageBox.Show("لطفا نام را وارد کنید", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return false;
 			}
 			if (txtFamily.Text == "")
@@ -62,13 +81,23 @@ namespace MyContactProject
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			if(isvalid())
+			if (isvalid())
 			{
-				bool success= contactRepository.Insert(txtName.Text, txtFamily.Text, txtEmail.Text,(int)NumberAge.Value , txtNumber.Text,txtAdress.Text);
-				if(success)
+				bool success;
+				if(x==0)
 				{
-					MessageBox.Show("مخاطب موردنظر ثبت شد","پیغام سیستم",MessageBoxButtons.OK, MessageBoxIcon.Information);
+					success = contactRepository.Insert(txtName.Text, txtFamily.Text, txtEmail.Text, (int)NumberAge.Value, txtNumber.Text, txtAdress.Text);
+				}
+				else
+				{
+					success = contactRepository.Update(x, txtName.Text, txtFamily.Text, Convert.ToInt32(NumberAge.Value),txtEmail.Text, txtNumber.Text,txtAdress.Text);
+				}
+
+				if (success)
+				{
+					MessageBox.Show("مخاطب موردنظر ثبت شد", "پیغام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					DialogResult = DialogResult.OK;
+					
 				}
 				else
 				{

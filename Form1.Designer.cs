@@ -209,6 +209,7 @@
 			this.btnedit.TabIndex = 5;
 			this.btnedit.Text = "ویرایش";
 			this.btnedit.UseVisualStyleBackColor = true;
+			this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
 			// 
 			// Form1
 			// 
