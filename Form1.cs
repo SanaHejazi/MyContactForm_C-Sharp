@@ -111,6 +111,23 @@ namespace MyContactProject
 
 
 			}
+
+		private void btnsearch_Click(object sender, EventArgs e)
+		{
+			if(txtsearch.Text==null)
+			{
+				MessageBox.Show("لطفا عبارت خود را برای جستجو وارد کنید", "پیغام");
+			}
+			else
+			{
+				contactRepository.Search(txtsearch.Text);
+			}
 		}
+
+		private void txtsearch_TextChanged(object sender, EventArgs e)
+		{
+			dgContact.DataSource=contactRepository.Search(txtsearch.Text);
+		}
+	}
 	}
 

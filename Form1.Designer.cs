@@ -47,8 +47,10 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.btndelete = new System.Windows.Forms.Button();
 			this.btnedit = new System.Windows.Forms.Button();
+			this.txtsearch = new System.Windows.Forms.TextBox();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgContact)).BeginInit();
+			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.myContacts_DBDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.myContactsDBDataSetBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.myContacts_DBDataSet1)).BeginInit();
@@ -139,6 +141,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.txtsearch);
 			this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(16, 59);
 			this.groupBox1.Name = "groupBox1";
@@ -211,6 +214,15 @@
 			this.btnedit.UseVisualStyleBackColor = true;
 			this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
 			// 
+			// txtsearch
+			// 
+			this.txtsearch.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.txtsearch.Location = new System.Drawing.Point(-4, 11);
+			this.txtsearch.Name = "txtsearch";
+			this.txtsearch.Size = new System.Drawing.Size(749, 36);
+			this.txtsearch.TabIndex = 0;
+			this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -231,6 +243,8 @@
 			this.Load += new System.EventHandler(this.Form1_Load_1);
 			this.groupBox2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgContact)).EndInit();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.myContacts_DBDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.myContactsDBDataSetBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.myContacts_DBDataSet1)).EndInit();
@@ -258,6 +272,7 @@
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button btndelete;
 		private System.Windows.Forms.Button btnedit;
+		private System.Windows.Forms.TextBox txtsearch;
 	}
 }
 

@@ -89,6 +89,20 @@ namespace MyContactProject
 			finally { connection.Close(); }
 		}
 
+		public DataTable Search(string NameAndFamily)
+		{
+
+			String query = "Select * From My_Contacts Where Name Like N'%"+NameAndFamily+"%'";
+			SqlConnection connection = new SqlConnection(connectionString);
+			SqlDataAdapter adapter=new SqlDataAdapter(query, connection);
+			//adapter.SelectCommand.Parameters.AddWithValue ("@Name", NameAndFamily);
+			DataTable dt = new DataTable();
+			adapter.Fill(dt);
+			return dt;
+
+
+		}
+
 		public bool Update(int Id, string Name, string Family, int Age,String Email, String Number,string address)
 		{
 			SqlConnection connection=new SqlConnection(connectionString);
